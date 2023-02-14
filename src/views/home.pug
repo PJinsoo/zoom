@@ -1,0 +1,29 @@
+//html 탬플릿 엔진
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Call
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+    body
+        header
+            h1 소켓의 영상통화방
+        main
+            div#welcome
+                form
+                    input(placeholder="방 이름", required, type="text")
+                    button 접속하기
+            div#call
+                div#myStream
+                  video#myFace(autoplay, playsinline, width="400", height="400")
+                  video#peerFace(autoplay,playsinline, width="400", height="400")
+                  br
+                  button#mute 음소거 하기
+                  button#camera 카메라 OFF
+                  select#cameras
+                
+        //Socket IO 프레임워크 적용
+        script(src="/socket.io/socket.io.js")
+        script(src="/public/js/app.js")
